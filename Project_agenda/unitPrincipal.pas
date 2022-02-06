@@ -30,6 +30,7 @@ type
     DBEdit3: TDBEdit;
     DBNavigator2: TDBNavigator;
     procedure txtbuscaChange(Sender: TObject);
+    procedure DBRadioGroup1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +45,11 @@ implementation
 {$R *.dfm}
 
 uses unitDM;
+
+procedure TForm1.DBRadioGroup1Click(Sender: TObject);
+begin
+ Application.Terminate;
+end;
 
 procedure TForm1.txtbuscaChange(Sender: TObject);
 begin

@@ -6616,6 +6616,7 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'celular'
+        Width = 64
         Visible = True
       end>
   end
@@ -6635,7 +6636,6 @@ object Form1: TForm1
     Caption = 'Busca de Contatos'
     DataSource = DM.dsContatos
     TabOrder = 6
-    OnClick = DBRadioGroup1Click
   end
   object RadioButton1: TRadioButton
     Left = 390
