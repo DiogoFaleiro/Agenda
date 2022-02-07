@@ -5,7 +5,16 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls,
+<<<<<<< HEAD
   Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids;
+=======
+<<<<<<< HEAD:Project_agenda/__history/unitPrincipal.pas.~35~
+  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids, JvComponentBase, JvCaptionButton,
+  JvExMask, JvToolEdit, JvMaskEdit, JvCheckedMaskEdit, JvDatePickerEdit;
+=======
+  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids;
+>>>>>>> parent of df54d91 (Add Jedi):Project_agenda/__history/unitPrincipal.pas.~23~
+>>>>>>> parent of df54d91 (Add Jedi)
 
 type
   TForm1 = class(TForm)
@@ -25,6 +34,21 @@ type
     check_nome: TRadioButton;
     check_celular: TRadioButton;
     txtbusca: TEdit;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:Project_agenda/__history/unitPrincipal.pas.~35~
+    DBRadioGroup1: TDBRadioGroup;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    Label6: TLabel;
+    DBComboBox1: TDBComboBox;
+    Label7: TLabel;
+    DBEdit3: TDBEdit;
+    DBNavigator2: TDBNavigator;
+    JvDatePickerEdit1: TJvDatePickerEdit;
+=======
+>>>>>>> parent of df54d91 (Add Jedi):Project_agenda/__history/unitPrincipal.pas.~23~
+>>>>>>> parent of df54d91 (Add Jedi)
     procedure txtbuscaChange(Sender: TObject);
     procedure check_nomeClick(Sender: TObject);
     procedure check_celularClick(Sender: TObject);

@@ -5,8 +5,12 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls,
+<<<<<<< HEAD:Project_agenda/__history/unitPrincipal.pas.~35~
   Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids, JvComponentBase, JvCaptionButton,
   JvExMask, JvToolEdit, JvMaskEdit, JvCheckedMaskEdit, JvDatePickerEdit;
+=======
+  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids;
+>>>>>>> parent of df54d91 (Add Jedi):Project_agenda/__history/unitPrincipal.pas.~23~
 
 type
   TForm1 = class(TForm)
@@ -20,8 +24,13 @@ type
     Label4: TLabel;
     Label5: TLabel;
     DBText1: TDBText;
+    DBNavigator1: TDBNavigator;
     DBGrid1: TDBGrid;
+    TLabel1: TLabel;
+    check_nome: TRadioButton;
+    check_celular: TRadioButton;
     txtbusca: TEdit;
+<<<<<<< HEAD:Project_agenda/__history/unitPrincipal.pas.~35~
     DBRadioGroup1: TDBRadioGroup;
     RadioButton1: TRadioButton;
     RadioButton2: TRadioButton;
@@ -31,8 +40,11 @@ type
     DBEdit3: TDBEdit;
     DBNavigator2: TDBNavigator;
     JvDatePickerEdit1: TJvDatePickerEdit;
+=======
+>>>>>>> parent of df54d91 (Add Jedi):Project_agenda/__history/unitPrincipal.pas.~23~
     procedure txtbuscaChange(Sender: TObject);
-    procedure DBRadioGroup1Click(Sender: TObject);
+    procedure check_nomeClick(Sender: TObject);
+    procedure check_celularClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,9 +60,18 @@ implementation
 
 uses unitDM;
 
-procedure TForm1.DBRadioGroup1Click(Sender: TObject);
+procedure TForm1.check_celularClick(Sender: TObject);
 begin
- Application.Terminate;
+
+if True then if True then DM.tbContatos.Locate('celular',txtbusca.Text, [loPartialKey]);
+
+end;
+
+procedure TForm1.check_nomeClick(Sender: TObject);
+begin
+
+  if True then DM.tbContatos.Locate('nome',txtbusca.Text, [loPartialKey]);
+
 end;
 
 procedure TForm1.txtbuscaChange(Sender: TObject);
