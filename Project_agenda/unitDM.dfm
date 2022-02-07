@@ -28,7 +28,6 @@ object DM: TDM
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
     end
     object tbContatosnome: TStringField
       AutoGenerateValue = arDefault

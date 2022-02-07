@@ -5,8 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls,
-  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids, JvComponentBase, JvCaptionButton,
-  JvExMask, JvToolEdit, JvMaskEdit, JvCheckedMaskEdit, JvDatePickerEdit;
+  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids;
 
 type
   TForm1 = class(TForm)
