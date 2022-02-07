@@ -30,7 +30,6 @@ type
     Label7: TLabel;
     DBEdit3: TDBEdit;
     DBNavigator2: TDBNavigator;
-    JvDatePickerEdit1: TJvDatePickerEdit;
     procedure txtbuscaChange(Sender: TObject);
     procedure DBRadioGroup1Click(Sender: TObject);
   private

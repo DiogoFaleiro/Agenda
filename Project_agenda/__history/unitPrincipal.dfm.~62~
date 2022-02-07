@@ -6496,7 +6496,7 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 32
-    Top = 24
+    Top = 19
     Width = 239
     Height = 29
     Caption = 'Agenda de Contatos'
@@ -6595,21 +6595,13 @@ object Form1: TForm1
     DataSource = DM.dsContatos
     TabOrder = 3
   end
-  object DBNavigator1: TDBNavigator
-    Left = 31
-    Top = 72
-    Width = 310
-    Height = 33
-    DataSource = DM.dsContatos
-    TabOrder = 4
-  end
   object DBGrid1: TDBGrid
     Left = 384
     Top = 133
     Width = 385
     Height = 442
     DataSource = DM.dsContatos
-    TabOrder = 5
+    TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
@@ -6619,24 +6611,11 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'nome'
-        Title.Caption = 'Contatos Cadastrados'
-        Title.Font.Charset = DEFAULT_CHARSET
-        Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
-        Title.Font.Style = [fsBold]
-        Width = 246
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'celular'
-        Title.Caption = 'Celular'
-        Title.Font.Charset = DEFAULT_CHARSET
-        Title.Font.Color = clWindowText
-        Title.Font.Height = -11
-        Title.Font.Name = 'Tahoma'
-        Title.Font.Style = [fsBold]
         Visible = True
       end>
   end
@@ -6645,17 +6624,18 @@ object Form1: TForm1
     Top = 106
     Width = 381
     Height = 21
-    TabOrder = 6
+    TabOrder = 5
     OnChange = txtbuscaChange
   end
   object DBRadioGroup1: TDBRadioGroup
     Left = 384
     Top = 59
-    Width = 145
+    Width = 381
     Height = 41
     Caption = 'Busca de Contatos'
     DataSource = DM.dsContatos
-    TabOrder = 7
+    TabOrder = 6
+    OnClick = DBRadioGroup1Click
   end
   object RadioButton1: TRadioButton
     Left = 390
@@ -6663,7 +6643,7 @@ object Form1: TForm1
     Width = 49
     Height = 17
     Caption = 'Nome'
-    TabOrder = 8
+    TabOrder = 7
   end
   object RadioButton2: TRadioButton
     Left = 463
@@ -6671,7 +6651,7 @@ object Form1: TForm1
     Width = 50
     Height = 17
     Caption = 'Celular'
-    TabOrder = 9
+    TabOrder = 8
   end
   object DBComboBox1: TDBComboBox
     Left = 31
@@ -6689,7 +6669,7 @@ object Form1: TForm1
       'Primo(a)'
       'Amigo(a)'
       'Filho(a)')
-    TabOrder = 10
+    TabOrder = 9
   end
   object DBEdit3: TDBEdit
     Left = 31
@@ -6698,6 +6678,23 @@ object Form1: TForm1
     Height = 21
     DataField = 'e-mail'
     DataSource = DM.dsContatos
+    TabOrder = 10
+  end
+  object DBNavigator2: TDBNavigator
+    Left = 31
+    Top = 59
+    Width = 310
+    Height = 38
+    DataSource = DM.dsContatos
     TabOrder = 11
+  end
+  object JvDatePickerEdit1: TJvDatePickerEdit
+    Left = 176
+    Top = 220
+    Width = 121
+    Height = 21
+    AllowNoDate = True
+    Checked = True
+    TabOrder = 12
   end
 end
