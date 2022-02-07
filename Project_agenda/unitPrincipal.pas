@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls,
-  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Mask, Data.DB, Vcl.Grids, Vcl.DBGrids, JvComponentBase, JvCaptionButton,
+  JvExMask, JvToolEdit, JvMaskEdit, JvCheckedMaskEdit, JvDatePickerEdit;
 
 type
   TForm1 = class(TForm)
@@ -29,6 +30,7 @@ type
     Label7: TLabel;
     DBEdit3: TDBEdit;
     DBNavigator2: TDBNavigator;
+    JvDatePickerEdit1: TJvDatePickerEdit;
     procedure txtbuscaChange(Sender: TObject);
     procedure DBRadioGroup1Click(Sender: TObject);
   private

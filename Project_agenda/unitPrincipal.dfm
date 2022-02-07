@@ -6688,4 +6688,13 @@ object Form1: TForm1
     DataSource = DM.dsContatos
     TabOrder = 11
   end
+  object JvDatePickerEdit1: TJvDatePickerEdit
+    Left = 176
+    Top = 220
+    Width = 121
+    Height = 21
+    AllowNoDate = True
+    Checked = True
+    TabOrder = 12
+  end
 end
