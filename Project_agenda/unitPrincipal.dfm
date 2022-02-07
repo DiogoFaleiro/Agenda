@@ -6496,7 +6496,7 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 32
-    Top = 19
+    Top = 24
     Width = 239
     Height = 29
     Caption = 'Agenda de Contatos'
@@ -6616,6 +6616,7 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'celular'
+        Width = 64
         Visible = True
       end>
   end
@@ -6683,7 +6684,7 @@ object Form1: TForm1
   object DBNavigator2: TDBNavigator
     Left = 31
     Top = 59
-    Width = 310
+    Width = 270
     Height = 38
     DataSource = DM.dsContatos
     TabOrder = 11
