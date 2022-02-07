@@ -6616,6 +6616,7 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'celular'
+        Width = 64
         Visible = True
       end>
   end
@@ -6630,7 +6631,7 @@ object Form1: TForm1
   object DBRadioGroup1: TDBRadioGroup
     Left = 384
     Top = 59
-    Width = 145
+    Width = 381
     Height = 41
     Caption = 'Busca de Contatos'
     DataSource = DM.dsContatos

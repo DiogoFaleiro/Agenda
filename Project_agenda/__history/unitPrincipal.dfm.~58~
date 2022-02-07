@@ -6496,7 +6496,7 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 32
-    Top = 16
+    Top = 24
     Width = 239
     Height = 29
     Caption = 'Agenda de Contatos'
@@ -6635,6 +6635,7 @@ object Form1: TForm1
     Caption = 'Busca de Contatos'
     DataSource = DM.dsContatos
     TabOrder = 6
+    OnClick = DBRadioGroup1Click
   end
   object RadioButton1: TRadioButton
     Left = 390
