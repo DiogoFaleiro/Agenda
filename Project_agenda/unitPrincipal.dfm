@@ -6496,7 +6496,7 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 32
-    Top = 24
+    Top = 8
     Width = 239
     Height = 29
     Caption = 'Agenda de Contatos'
@@ -6529,16 +6529,16 @@ object Form1: TForm1
     Caption = 'Observa'#231#245'es'
   end
   object Label5: TLabel
-    Left = 31
-    Top = 525
+    Left = 32
+    Top = 541
     Width = 120
     Height = 13
     Caption = 'Data e Hora do Cadastro'
   end
   object DBText1: TDBText
     Left = 31
-    Top = 552
-    Width = 217
+    Top = 568
+    Width = 114
     Height = 17
     DataField = 'data'
     DataSource = DM.dsContatos
@@ -6556,6 +6556,13 @@ object Form1: TForm1
     Width = 28
     Height = 13
     Caption = 'E-mail'
+  end
+  object lblConsulta: TLabel
+    Left = 374
+    Top = 51
+    Width = 66
+    Height = 13
+    Caption = 'Digite o Nome'
   end
   object DBEdit1: TDBEdit
     Left = 31
@@ -6596,10 +6603,10 @@ object Form1: TForm1
     TabOrder = 3
   end
   object DBGrid1: TDBGrid
-    Left = 384
-    Top = 133
-    Width = 385
-    Height = 442
+    Left = 374
+    Top = 135
+    Width = 399
+    Height = 452
     DataSource = DM.dsContatos
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
@@ -6611,48 +6618,33 @@ object Form1: TForm1
       item
         Expanded = False
         FieldName = 'nome'
+        Title.Caption = 'NOME'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 263
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'celular'
-        Width = 64
+        Title.Caption = 'CELULAR'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
         Visible = True
       end>
   end
   object txtbusca: TEdit
-    Left = 384
-    Top = 106
-    Width = 381
+    Left = 374
+    Top = 70
+    Width = 243
     Height = 21
     TabOrder = 5
-    OnChange = txtbuscaChange
-  end
-  object DBRadioGroup1: TDBRadioGroup
-    Left = 384
-    Top = 59
-    Width = 381
-    Height = 41
-    Caption = 'Busca de Contatos'
-    DataSource = DM.dsContatos
-    TabOrder = 6
-    OnClick = DBRadioGroup1Click
-  end
-  object RadioButton1: TRadioButton
-    Left = 390
-    Top = 76
-    Width = 49
-    Height = 17
-    Caption = 'Nome'
-    TabOrder = 7
-  end
-  object RadioButton2: TRadioButton
-    Left = 463
-    Top = 76
-    Width = 50
-    Height = 17
-    Caption = 'Celular'
-    TabOrder = 8
   end
   object DBComboBox1: TDBComboBox
     Left = 31
@@ -6670,7 +6662,7 @@ object Form1: TForm1
       'Primo(a)'
       'Amigo(a)'
       'Filho(a)')
-    TabOrder = 9
+    TabOrder = 6
   end
   object DBEdit3: TDBEdit
     Left = 31
@@ -6679,14 +6671,37 @@ object Form1: TForm1
     Height = 21
     DataField = 'e-mail'
     DataSource = DM.dsContatos
-    TabOrder = 10
+    TabOrder = 7
   end
   object DBNavigator2: TDBNavigator
     Left = 31
-    Top = 59
+    Top = 53
     Width = 270
     Height = 38
     DataSource = DM.dsContatos
-    TabOrder = 11
+    TabOrder = 8
+  end
+  object btconsultar: TButton
+    Left = 374
+    Top = 96
+    Width = 399
+    Height = 33
+    Caption = 'Consultar'
+    TabOrder = 9
+    OnClick = btconsultarClick
+  end
+  object opcoes: TRadioGroup
+    Left = 630
+    Top = 24
+    Width = 143
+    Height = 66
+    Caption = 'Op'#231#245'es de Consulta'
+    Columns = 2
+    ItemIndex = 0
+    Items.Strings = (
+      'Nome'
+      'Celular')
+    TabOrder = 10
+    OnClick = opcoesClick
   end
 end

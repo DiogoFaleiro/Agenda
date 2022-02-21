@@ -17,17 +17,17 @@ object DM: TDM
   end
   object tbContatos: TFDTable
     Active = True
-    AfterInsert = tbContatosAfterInsert
     IndexFieldNames = 'id'
     Connection = Conexao
     UpdateOptions.UpdateTableName = 'agenda.contatos'
     TableName = 'agenda.contatos'
-    Left = 160
+    Left = 128
     Top = 48
     object tbContatosid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object tbContatosnome: TStringField
       AutoGenerateValue = arDefault
@@ -73,7 +73,25 @@ object DM: TDM
   end
   object dsContatos: TDataSource
     DataSet = tbContatos
-    Left = 160
-    Top = 144
+    Left = 128
+    Top = 120
+  end
+  object sqlConsulta: TFDQuery
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from contatos')
+    Left = 240
+    Top = 48
+    ParamData = <
+      item
+        Name = 'pConsulta'
+      end>
+  end
+  object dsSqlConsulta: TDataSource
+    DataSet = sqlConsulta
+    Left = 240
+    Top = 120
   end
 end

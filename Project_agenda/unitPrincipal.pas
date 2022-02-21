@@ -21,16 +21,16 @@ type
     DBText1: TDBText;
     DBGrid1: TDBGrid;
     txtbusca: TEdit;
-    DBRadioGroup1: TDBRadioGroup;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
     Label6: TLabel;
     DBComboBox1: TDBComboBox;
     Label7: TLabel;
     DBEdit3: TDBEdit;
     DBNavigator2: TDBNavigator;
-    procedure txtbuscaChange(Sender: TObject);
-    procedure DBRadioGroup1Click(Sender: TObject);
+    lblConsulta: TLabel;
+    btconsultar: TButton;
+    opcoes: TRadioGroup;
+    procedure opcoesClick(Sender: TObject);
+    procedure btconsultarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,14 +46,41 @@ implementation
 
 uses unitDM;
 
-procedure TForm1.DBRadioGroup1Click(Sender: TObject);
+procedure TForm1.btconsultarClick(Sender: TObject);
 begin
- Application.Terminate;
+
+  DM.sqlConsulta.Close;
+  DM.sqlConsulta.SQL.Clear;
+
+  if (opcoes.ItemIndex = 0) then
+    begin
+      DM.sqlConsulta.SQL.Add('select * from contatos where nome = :pConsulta');
+      DM.sqlConsulta.ParamByName('pConsulta').AsString := txtBusca.Text;
+    end;
+
+  if (opcoes.ItemIndex = 1) then
+    begin
+      DM.sqlConsulta.SQL.Add('select * from contatos where celular = :pConsulta');
+      DM.sqlConsulta.ParamByName('pConsulta').AsString := txtBusca.Text;
+    end;
+
+  DM.sqlConsulta.Open;
+
 end;
 
-procedure TForm1.txtbuscaChange(Sender: TObject);
+procedure TForm1.opcoesClick(Sender: TObject);
 begin
-  DM.tbContatos.Locate('nome',txtbusca.Text, [loPartialKey]);
+
+  if (opcoes.ItemIndex = 0) then
+    begin
+      lblConsulta.Caption := 'Digite o Nome';
+    end;
+
+  if (opcoes.ItemIndex = 1) then
+    begin
+      lblConsulta.Caption := 'Digite o Celular';
+    end;
+
 end;
 
 end.
