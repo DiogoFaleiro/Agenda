@@ -6494,6 +6494,12 @@ object Form1: TForm1
   Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
+  object Bevel1: TBevel
+    Left = 22
+    Top = 97
+    Width = 346
+    Height = 492
+  end
   object Label1: TLabel
     Left = 32
     Top = 8
@@ -6564,6 +6570,13 @@ object Form1: TForm1
     Height = 13
     Caption = 'Digite o Nome'
   end
+  object Label8: TLabel
+    Left = 376
+    Top = 321
+    Width = 158
+    Height = 13
+    Caption = 'Pesquisa enquanto digita o nome'
+  end
   object DBEdit1: TDBEdit
     Left = 31
     Top = 129
@@ -6602,12 +6615,12 @@ object Form1: TForm1
     DataSource = DM.dsContatos
     TabOrder = 3
   end
-  object DBGrid1: TDBGrid
+  object gridquery: TDBGrid
     Left = 374
     Top = 135
     Width = 399
-    Height = 452
-    DataSource = DM.dsContatos
+    Height = 178
+    DataSource = DM.dsSqlConsulta
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -6674,11 +6687,27 @@ object Form1: TForm1
     TabOrder = 7
   end
   object DBNavigator2: TDBNavigator
-    Left = 31
-    Top = 53
-    Width = 270
-    Height = 38
+    Left = 22
+    Top = 51
+    Width = 340
+    Height = 40
     DataSource = DM.dsContatos
+    Hints.Strings = (
+      'Primeiro Registro'
+      'Registro Anterior'
+      'Pr'#243'ximo Registro'
+      #218'ltimo Registro'
+      'Inserir'
+      'Deletar'
+      'Editar'
+      'Gravar'
+      'Cancelar'
+      'Atualizar'
+      'Aplicar altera'#231#245'es'
+      'Cancelar altera'#231#245'es')
+    ParentShowHint = False
+    ConfirmDelete = False
+    ShowHint = True
     TabOrder = 8
   end
   object btconsultar: TButton
@@ -6703,5 +6732,55 @@ object Form1: TForm1
       'Celular')
     TabOrder = 10
     OnClick = opcoesClick
+  end
+  object gridbusca: TDBGrid
+    Left = 374
+    Top = 363
+    Width = 399
+    Height = 222
+    DataSource = DM.dsContatos
+    TabOrder = 11
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = 'NOME'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 264
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'celular'
+        Title.Caption = 'CELULAR'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Visible = True
+      end>
+  end
+  object txtconsulta: TEdit
+    Left = 374
+    Top = 338
+    Width = 243
+    Height = 21
+    TabOrder = 12
+    OnChange = txtconsultaChange
   end
 end

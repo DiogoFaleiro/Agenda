@@ -19,7 +19,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     DBText1: TDBText;
-    DBGrid1: TDBGrid;
+    gridquery: TDBGrid;
     txtbusca: TEdit;
     Label6: TLabel;
     DBComboBox1: TDBComboBox;
@@ -29,8 +29,13 @@ type
     lblConsulta: TLabel;
     btconsultar: TButton;
     opcoes: TRadioGroup;
+    gridbusca: TDBGrid;
+    txtconsulta: TEdit;
+    Label8: TLabel;
+    Bevel1: TBevel;
     procedure opcoesClick(Sender: TObject);
     procedure btconsultarClick(Sender: TObject);
+    procedure txtconsultaChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,22 +51,24 @@ implementation
 
 uses unitDM;
 
+
+
 procedure TForm1.btconsultarClick(Sender: TObject);
 begin
-
+  // Configurando a query de consulta ao banco de dados
   DM.sqlConsulta.Close;
   DM.sqlConsulta.SQL.Clear;
 
   if (opcoes.ItemIndex = 0) then
     begin
-      DM.sqlConsulta.SQL.Add('select * from contatos where nome = :pConsulta');
-      DM.sqlConsulta.ParamByName('pConsulta').AsString := txtBusca.Text;
+      DM.sqlConsulta.SQL.Add('select * from contatos where nome LIKE :pConsulta');
+      DM.sqlConsulta.ParamByName('pConsulta').AsString := txtBusca.Text+'%';
     end;
 
   if (opcoes.ItemIndex = 1) then
     begin
-      DM.sqlConsulta.SQL.Add('select * from contatos where celular = :pConsulta');
-      DM.sqlConsulta.ParamByName('pConsulta').AsString := txtBusca.Text;
+      DM.sqlConsulta.SQL.Add('select * from contatos where celular LIKE :pConsulta');
+      DM.sqlConsulta.ParamByName('pConsulta').AsString := txtBusca.Text+'%';
     end;
 
   DM.sqlConsulta.Open;
@@ -70,7 +77,7 @@ end;
 
 procedure TForm1.opcoesClick(Sender: TObject);
 begin
-
+  // Identificando qual dos filtros está marcado e mudando o label
   if (opcoes.ItemIndex = 0) then
     begin
       lblConsulta.Caption := 'Digite o Nome';
@@ -80,6 +87,13 @@ begin
     begin
       lblConsulta.Caption := 'Digite o Celular';
     end;
+
+end;
+
+procedure TForm1.txtconsultaChange(Sender: TObject);
+begin
+
+  DM.tbContatos.Locate('nome',txtconsulta.Text, [loPartialKey]);
 
 end;
 

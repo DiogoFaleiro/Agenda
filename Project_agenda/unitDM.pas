@@ -25,6 +25,7 @@ type
     tbContatosobservacoes: TMemoField;
     sqlConsulta: TFDQuery;
     dsSqlConsulta: TDataSource;
+    procedure tbContatosAfterInsert(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -39,5 +40,12 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TDM.tbContatosAfterInsert(DataSet: TDataSet);
+begin
+  // Pegando a data e a hora quando for gravar a informação
+  tbContatosdata.Value := Now();
+
+end;
 
 end.

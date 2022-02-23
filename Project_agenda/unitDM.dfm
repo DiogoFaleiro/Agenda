@@ -17,6 +17,7 @@ object DM: TDM
   end
   object tbContatos: TFDTable
     Active = True
+    AfterInsert = tbContatosAfterInsert
     IndexFieldNames = 'id'
     Connection = Conexao
     UpdateOptions.UpdateTableName = 'agenda.contatos'
@@ -87,6 +88,7 @@ object DM: TDM
     ParamData = <
       item
         Name = 'pConsulta'
+        ParamType = ptInput
       end>
   end
   object dsSqlConsulta: TDataSource
