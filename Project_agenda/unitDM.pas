@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL,
   FireDAC.Phys.MySQLDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, Vcl.Dialogs;
 
 type
   TDM = class(TDataModule)
@@ -25,7 +25,8 @@ type
     tbContatosobservacoes: TMemoField;
     sqlConsulta: TFDQuery;
     dsSqlConsulta: TDataSource;
-    procedure tbContatosAfterInsert(DataSet: TDataSet);
+    procedure sqlConsultaAfterInsert(DataSet: TDataSet);
+    procedure sqlConsultaAfterOpen(DataSet: TDataSet);
   private
     { Private declarations }
   public
@@ -39,12 +40,23 @@ implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
+uses unitPrincipal;
+
 {$R *.dfm}
 
-procedure TDM.tbContatosAfterInsert(DataSet: TDataSet);
+procedure TDM.sqlConsultaAfterInsert(DataSet: TDataSet);
 begin
+
   // Pegando a data e a hora quando for gravar a informação
   tbContatosdata.Value := Now();
+
+end;
+
+procedure TDM.sqlConsultaAfterOpen(DataSet: TDataSet);
+begin
+
+  // Colocando máscara em um campo sem adiciona-lo na query
+  TNumericField(DataSet.FieldByName('celular')).EditMask := '!\(99\)00000-0000;1;_';
 
 end;
 
